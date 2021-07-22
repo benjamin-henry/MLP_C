@@ -12,7 +12,7 @@ extern "C" {
 
 enum Loss {
   Categorical_Crossentropy = 0,
-  // Binary_Crossentropy,
+  Binary_Crossentropy,
   MSE,
 };
 
