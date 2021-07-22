@@ -1,0 +1,31 @@
+#######################################
+# Syntax Coloring Map For MLP
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+MLP	KEYWORD1
+Dense	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+mlp_from_cfg	KEYWORD2
+mlp_predict	KEYWORD2
+train_on_batch	KEYWORD2
+extract1dfrom2d	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+MSE	LITERAL1
+Categorical_Crossentropy	LITERAL1
+Linear	LITERAL1
+Sigmoid	LITERAL1
+Softmax	LITERAL1
+Relu	LITERAL1
+Tanh	LITERAL1
