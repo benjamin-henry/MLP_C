@@ -87,6 +87,10 @@ float train_on_batch(MLP mlp, unsigned int batch_size, unsigned int output_shape
         case Categorical_Crossentropy:
           _loss -= y_true_buf[i] * (float)log(y_pred_buf[i]);
           break;
+          
+        case Binary_Crossentropy:
+          _loss -= y_true_buf[i] * (float)log(y_pred_buf[i]) + (1.f - y_true_buf[i]) * (float)log(1 - y_pred_buf[i]);
+          break;
 
         default:
           break;
