@@ -8,14 +8,14 @@ unsigned int layers_cfg[][2] = {
 };
 
 // XOR dataset
-float X[4][2] = {
+float X[][2] = {
   {0., 0.},
   {0., 1.},
   {1., 0.},
   {1., 1.},
 };
 
-float y_true[4][1] = {
+float y_true[][1] = {
   {0.},
   {1.},
   {1.},
