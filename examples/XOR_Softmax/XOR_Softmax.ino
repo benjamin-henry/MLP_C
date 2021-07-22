@@ -23,7 +23,7 @@ float y_true[][2] = {
 };
 
 float input_buff[2] = {0.f};
-float output_buff[1] = {0.f};
+float output_buff[2] = {0.f};
 
 float learning_rate = .001f;
 
