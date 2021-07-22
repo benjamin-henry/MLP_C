@@ -1,5 +1,5 @@
 # MLP_C
-Multi Layer Perceptron implementation in C ( for Arduino or other MCUs)
+Multi Layer Perceptron implementation in C ( for Arduino or other MCUs )
 
 
 Available Activations
