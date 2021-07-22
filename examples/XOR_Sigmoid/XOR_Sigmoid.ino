@@ -2,20 +2,20 @@
 
 unsigned int input_shape = 2;
 unsigned int layers_cfg[][2] = {
-  {3, Sigmoid},
-  {4, Sigmoid},
+  {3, Relu},
+  {4, Relu},
   {1, Sigmoid},
 };
 
 // XOR dataset
-float X[][2] = {
+float X[4][2] = {
   {0., 0.},
   {0., 1.},
   {1., 0.},
   {1., 1.},
 };
 
-float y_true[][1] = {
+float y_true[4][1] = {
   {0.},
   {1.},
   {1.},
@@ -27,6 +27,7 @@ float output_buff[1] = {0.};
 
 MLP mlp = mlp_from_cfg(input_shape, sizeof(layers_cfg) / sizeof(layers_cfg[0]), layers_cfg);
 
+float learning_rate = .001;
 
 void setup() {
   Serial.begin(115200);
@@ -40,7 +41,7 @@ void setup() {
   Serial.print('\t');
   Serial.println("loss");
   for (unsigned int i = 0; i < 50000; i++) {
-    float loss = train_on_batch(mlp, batch_size, output_shape, (float*)X, (float*)y_true, MSE, .1);
+    float loss = train_on_batch(mlp, batch_size, output_shape, (float*)X, (float*)y_true, Binary_Crossentropy, learning_rate);
     if (!cnt) {
       cnt = 99;
       Serial.print(i + 1);
