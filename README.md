@@ -1,6 +1,7 @@
 # MLP_C
 Multi Layer Perceptron implementation in C ( for Arduino or other MCUs )
 
+Tested on ESP32
 
 Available Activations
 ```c
