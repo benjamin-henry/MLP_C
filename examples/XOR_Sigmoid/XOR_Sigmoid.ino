@@ -27,7 +27,7 @@ float output_buff[1] = {0.};
 
 MLP mlp = mlp_from_cfg(input_shape, sizeof(layers_cfg) / sizeof(layers_cfg[0]), layers_cfg);
 
-float learning_rate = .001;
+float learning_rate = .1;
 
 void setup() {
   Serial.begin(115200);
