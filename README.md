@@ -13,4 +13,13 @@ enum Activation {
 };
 ```
 
+Available Losses 
+```c
+enum Loss {
+  Categorical_Crossentropy = 0,
+  Binary_Crossentropy,
+  MSE,
+};
+```
+
 To see examples, please go to the examples folder.
