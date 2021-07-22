@@ -2,8 +2,8 @@
 
 unsigned int input_shape = 2;
 unsigned int layers_cfg[][2] = {
-  {3, Relu},
-  {4, Relu},
+  {3, Sigmoid},
+  {4, Sigmoid},
   {1, Sigmoid},
 };
 
