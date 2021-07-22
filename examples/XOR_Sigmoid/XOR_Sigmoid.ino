@@ -8,22 +8,22 @@ unsigned int layers_cfg[][2] = {
 };
 
 // XOR dataset
-double X[4][2] = {
+float X[4][2] = {
   {0., 0.},
   {0., 1.},
   {1., 0.},
   {1., 1.},
 };
 
-double y_true[4][1] = {
+float y_true[4][1] = {
   {0.},
   {1.},
   {1.},
   {0.},
 };
 
-double input_buff[2] = {0.};
-double output_buff[1] = {0.};
+float input_buff[2] = {0.};
+float output_buff[1] = {0.};
 
 MLP mlp = mlp_from_cfg(input_shape, sizeof(layers_cfg) / sizeof(layers_cfg[0]), layers_cfg);
 
@@ -40,7 +40,7 @@ void setup() {
   Serial.print('\t');
   Serial.println("loss");
   for (unsigned int i = 0; i < 50000; i++) {
-    double loss = train_on_batch(mlp, batch_size, output_shape, (double*)X, (double*)y_true, MSE, .1);
+    float loss = train_on_batch(mlp, batch_size, output_shape, (float*)X, (float*)y_true, MSE, .1);
     if (!cnt) {
       cnt = 99;
       Serial.print(i + 1);
@@ -57,7 +57,7 @@ void setup() {
   Serial.print('\t');
   Serial.println("y_pred");
   for (unsigned int i_sample = 0; i_sample < batch_size; i_sample++) {
-    extract1dfrom2d((double*)X, (double*)input_buff, i_sample , mlp->_input_shape);
+    extract1dfrom2d((float*)X, (float*)input_buff, i_sample , mlp->_input_shape);
     mlp_predict(mlp, input_buff, output_buff);
     for (int j = 0; j < output_shape; j++) {
       Serial.print(y_true[i_sample][j], 5);
