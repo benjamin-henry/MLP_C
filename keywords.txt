@@ -24,6 +24,7 @@ extract1dfrom2d	KEYWORD2
 
 MSE	LITERAL1
 Categorical_Crossentropy	LITERAL1
+Binary_Crossentropy	LITERAL1
 Linear	LITERAL1
 Sigmoid	LITERAL1
 Softmax	LITERAL1
