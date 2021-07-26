@@ -31,9 +31,13 @@ void mlp_predict(MLP mlp, float * input_data, float * output);
 float train_on_batch(MLP mlp, unsigned int batch_size, unsigned int output_shape, float* X, float* y_true, unsigned int loss, float learning_rate);
 
 
+
 #ifdef __cplusplus
 }
 #endif
 
+unsigned int mlp_save_config(MLP mlp, unsigned int address);
+unsigned int mlp_save_weights(MLP mlp, unsigned int address);
+unsigned int mlp_load_weights(MLP mlp, unsigned int address);
 
 #endif
